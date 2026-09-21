@@ -2,3 +2,4 @@ Login Module
 Username
 Passwrod
 Login ButtonEmail
+Forgot Password
