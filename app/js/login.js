@@ -5,8 +5,15 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
     const password = document.getElementById("password").value.trim();
     const errorMessage = document.getElementById("errorMessage");
 
-    if (username === "" || password === "") {
-        errorMessage.textContent = "Username and password are required.";
+    errorMessage.style.color = "red";
+
+    if (username === "") {
+        errorMessage.textContent = "Please enter your username.";
+        return;
+    }
+
+    if (password === "") {
+        errorMessage.textContent = "Please enter your password.";
         return;
     }
 
@@ -15,6 +22,11 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
         return;
     }
 
+    if (username !== "student") {
+        errorMessage.textContent = "Invalid username. Please try again.";
+        return;
+    }
+
     errorMessage.style.color = "green";
-    errorMessage.textContent = "Login successful!";
+    errorMessage.textContent = "Login successful! Welcome, Student.";
 });
