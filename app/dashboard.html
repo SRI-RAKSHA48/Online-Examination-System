@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="login-container">
+
+        <div class="login-box">
+
+            <h1>Student Dashboard</h1>
+
+            <p class="subtitle">Welcome, Student!</p>
+
+            <div class="dashboard-info">
+                <p><strong>Student ID:</strong> student</p>
+                <p><strong>Exam:</strong> Online Programming Test</p>
+                <p><strong>Questions:</strong> 5</p>
+                <p><strong>Duration:</strong> 5 Minutes</p>
+            </div>
+
+            <button onclick="startExam()">Start Exam</button>
+
+            <button onclick="logout()" class="logout-button">
+                Logout
+            </button>
+
+        </div>
+
+    </div>
+
+    <script>
+        function startExam() {
+            window.location.href = "exam.html";
+        }
+
+        function logout() {
+            window.location.href = "index.html";
+        }
+    </script>
+
+</body>
+</html>

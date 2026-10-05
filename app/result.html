@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Result</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="login-container">
+
+        <div class="login-box">
+
+            <h1>Exam Result</h1>
+
+            <p class="subtitle">Online Programming Test</p>
+
+            <div class="dashboard-info">
+
+                <p>
+                    <strong>Student ID:</strong> student
+                </p>
+
+                <p>
+                    <strong>Score:</strong>
+                    <span id="score"></span>
+                </p>
+
+                <p>
+                    <strong>Percentage:</strong>
+                    <span id="percentage"></span>
+                </p>
+
+                <p>
+                    <strong>Status:</strong>
+                    <span id="status"></span>
+                </p>
+
+            </div>
+
+            <button onclick="window.location.href='dashboard.html'">
+                Back to Dashboard
+            </button>
+
+        </div>
+
+    </div>
+
+    <script>
+        const score = Number(localStorage.getItem("examScore"));
+        const total = Number(localStorage.getItem("totalQuestions"));
+
+        const percentage = (score / total) * 100;
+
+        document.getElementById("score").textContent =
+            score + " / " + total;
+
+        document.getElementById("percentage").textContent =
+            percentage + "%";
+
+        document.getElementById("status").textContent =
+            percentage >= 40 ? "PASS" : "FAIL";
+    </script>
+
+</body>
+</html>

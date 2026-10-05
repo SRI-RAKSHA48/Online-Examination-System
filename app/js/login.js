@@ -33,6 +33,10 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
 
     // Successful login
     errorMessage.style.color = "green";
-    errorMessage.textContent =
-        "Welcome to the Student Examination Portal!";
+errorMessage.textContent =
+    "Welcome to the Student Examination Portal!";
+
+setTimeout(function() {
+    window.location.href = "dashboard.html";
+}, 1000);
 });
