@@ -1,3 +1,10 @@
+/* =========================================================
+   ONLINE EXAMINATION SYSTEM
+   Purple Theme
+   ========================================================= */
+
+/* ---------- Global ---------- */
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -5,86 +12,530 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background: #f2f5f9;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f0ff;
+    color: #2e1065;
+    min-height: 100vh;
+}
+
+/* ---------- Common Layout ---------- */
+
+.login-container {
+    width: 100%;
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 30px;
 }
 
-.login-container {
-    width: 100%;
+
+/* =========================================================
+   LOGIN PAGE
+   ========================================================= */
+
+.login-wrapper {
+    width: 900px;
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: #ffffff;
+    border: 1px solid #ddd6fe;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 18px 45px rgba(76, 29, 149, 0.18);
+}
+
+/* Left purple panel */
+
+.welcome-section {
+    background: #5b21b6;
+    color: #ffffff;
+    padding: 50px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.welcome-icon {
+    width: 58px;
+    height: 58px;
+    background: #7c3aed;
+    border-radius: 14px;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.login-box {
-    background: white;
-    width: 400px;
-    padding: 35px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-}
-
-.login-box h1 {
-    text-align: center;
-    color: #1f3c88;
-    font-size: 26px;
-    margin-bottom: 8px;
-}
-
-.subtitle {
-    text-align: center;
-    color: #666;
+    font-size: 27px;
     margin-bottom: 25px;
 }
 
+.welcome-section h1 {
+    font-size: 30px;
+    line-height: 1.2;
+    margin-bottom: 15px;
+}
+
+.welcome-section p {
+    color: #ede9fe;
+    line-height: 1.6;
+    font-size: 15px;
+}
+
+.portal-features {
+    margin-top: 30px;
+}
+
+.portal-feature {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+    color: #ede9fe;
+    font-size: 14px;
+}
+
+.check {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #8b5cf6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+}
+
+/* Right login panel */
+
+.login-section {
+    padding: 50px 45px;
+    background: #ffffff;
+}
+
+.login-section h2 {
+    color: #4c1d95;
+    font-size: 25px;
+    margin-bottom: 7px;
+}
+
+.login-subtitle {
+    color: #7c5ca8;
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+
+/* =========================================================
+   FORM ELEMENTS
+   ========================================================= */
+
 label {
     display: block;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
     font-weight: bold;
+    color: #4c1d95;
 }
 
 input {
     width: 100%;
-    padding: 12px;
-    margin-bottom: 18px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    padding: 13px 14px;
+    margin-bottom: 20px;
+    border: 1px solid #c4b5fd;
+    border-radius: 9px;
+    background: #faf8ff;
+    color: #2e1065;
     font-size: 15px;
+    transition: 0.2s;
 }
 
 input:focus {
     outline: none;
-    border-color: #1f3c88;
+    border-color: #8b5cf6;
+    background: #ffffff;
+    box-shadow: 0 0 0 3px #ede9fe;
 }
+
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
 
 button {
     width: 100%;
-    padding: 12px;
-    background: #1f3c88;
-    color: white;
+    padding: 14px;
+    background: #7c3aed;
+    color: #ffffff;
     border: none;
-    border-radius: 5px;
+    border-radius: 9px;
     font-size: 16px;
+    font-weight: bold;
     cursor: pointer;
+    transition: 0.2s;
 }
 
 button:hover {
-    background: #162d68;
+    background: #6d28d9;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 15px rgba(109, 40, 217, 0.28);
 }
 
+
+/* =========================================================
+   LOGIN MESSAGES
+   ========================================================= */
+
 #errorMessage {
-    color: red;
+    color: #dc2626;
     font-size: 14px;
-    margin-bottom: 12px;
+    margin-bottom: 14px;
+    min-height: 18px;
 }
 
 .forgot-password {
     text-align: center;
-    margin-top: 18px;
-    color: #1f3c88;
+    margin-top: 20px;
+    color: #7c3aed;
     cursor: pointer;
+    font-size: 14px;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+.login-footer {
+    text-align: center;
+    margin-top: 28px;
+    padding-top: 18px;
+    border-top: 1px solid #ede9fe;
+    color: #8b7aa8;
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   STUDENT DASHBOARD
+   ========================================================= */
+
+.dashboard-container {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 25px;
+}
+
+.dashboard-header {
+    background: #5b21b6;
+    color: #ffffff;
+    padding: 30px 35px;
+    border-radius: 18px 18px 0 0;
+}
+
+.dashboard-header h1 {
+    font-size: 28px;
+    margin-bottom: 7px;
+}
+
+.dashboard-header p {
+    color: #ede9fe;
+    font-size: 15px;
+}
+
+.dashboard-content {
+    background: #ffffff;
+    padding: 32px;
+    border: 1px solid #ddd6fe;
+    border-top: none;
+    border-radius: 0 0 18px 18px;
+    box-shadow: 0 15px 35px rgba(76, 29, 149, 0.15);
+}
+
+.exam-title {
+    color: #4c1d95;
+    font-size: 21px;
+    margin-bottom: 22px;
+}
+
+.dashboard-info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-bottom: 28px;
+}
+
+.info-card {
+    background: #f5f0ff;
+    border: 1px solid #ddd6fe;
+    border-radius: 12px;
+    padding: 18px;
+    transition: 0.2s;
+}
+
+.info-card:hover {
+    border-color: #a78bfa;
+    transform: translateY(-2px);
+}
+
+.info-label {
+    color: #7c5ca8;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 7px;
+}
+
+.info-value {
+    color: #4c1d95;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.button-area {
+    display: flex;
+    gap: 12px;
+}
+
+.start-button {
+    flex: 1;
+}
+
+.logout-button {
+    flex: 0.35;
+    background: #ede9fe;
+    color: #5b21b6;
+    border: 1px solid #ddd6fe;
+}
+
+.logout-button:hover {
+    background: #ddd6fe;
+    color: #4c1d95;
+    box-shadow: none;
+}
+
+
+/* =========================================================
+   EXAM PAGE
+   ========================================================= */
+
+.exam-container {
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 35px 25px;
+}
+
+.exam-header {
+    background: #5b21b6;
+    color: #ffffff;
+    padding: 25px 30px;
+    border-radius: 16px 16px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.exam-header h1 {
+    font-size: 25px;
+    margin-bottom: 5px;
+}
+
+.exam-header p {
+    color: #ede9fe;
+    font-size: 14px;
+}
+
+.timer {
+    background: #ffffff;
+    color: #6d28d9;
+    padding: 12px 18px;
+    border-radius: 10px;
+    font-size: 17px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.exam-content {
+    background: #ffffff;
+    padding: 30px;
+    border: 1px solid #ddd6fe;
+    border-top: none;
+    border-radius: 0 0 16px 16px;
+    box-shadow: 0 15px 35px rgba(76, 29, 149, 0.15);
+}
+
+.question-card {
+    background: #faf8ff;
+    border: 1px solid #ddd6fe;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 18px;
+}
+
+.question-card h3 {
+    color: #4c1d95;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #ffffff;
+    border: 1px solid #ede9fe;
+    border-radius: 8px;
+    padding: 11px 13px;
+    margin-bottom: 9px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.option:hover {
+    border-color: #a78bfa;
+    background: #f5f0ff;
+}
+
+.option input {
+    width: auto;
+    margin: 0;
+    accent-color: #7c3aed;
+}
+
+.submit-button {
+    margin-top: 10px;
+    background: #7c3aed;
+}
+
+
+/* =========================================================
+   RESULT PAGE
+   ========================================================= */
+
+.result-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px 25px;
+}
+
+.result-card {
+    background: #ffffff;
+    border: 1px solid #ddd6fe;
+    border-radius: 18px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(76, 29, 149, 0.15);
+}
+
+.result-card h1 {
+    color: #5b21b6;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.result-subtitle {
+    color: #7c5ca8;
+    margin-bottom: 30px;
+}
+
+.result-score {
+    background: #f5f0ff;
+    border: 1px solid #ddd6fe;
+    border-radius: 14px;
+    padding: 25px;
+    margin-bottom: 20px;
+}
+
+.result-score h2 {
+    color: #7c5ca8;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.result-score .score {
+    color: #4c1d95;
+    font-size: 38px;
+    font-weight: bold;
+}
+
+.result-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.result-item {
+    background: #faf8ff;
+    border: 1px solid #ede9fe;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.result-item span {
+    display: block;
+    color: #7c5ca8;
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+.result-item strong {
+    color: #4c1d95;
+    font-size: 17px;
+}
+
+.result-button {
+    margin-top: 5px;
+}
+
+
+/* =========================================================
+   RESPONSIVE DESIGN
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .login-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .welcome-section {
+        padding: 35px;
+    }
+
+    .login-section {
+        padding: 35px;
+    }
+
+    .dashboard-container,
+    .exam-container,
+    .result-container {
+        padding: 20px 15px;
+    }
+
+    .dashboard-info {
+        grid-template-columns: 1fr;
+    }
+
+    .button-area {
+        flex-direction: column;
+    }
+
+    .logout-button {
+        flex: 1;
+    }
+
+    .exam-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .timer {
+        width: 100%;
+        text-align: center;
+    }
+
+    .result-details {
+        grid-template-columns: 1fr;
+    }
 }
