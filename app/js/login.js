@@ -7,26 +7,32 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
 
     errorMessage.style.color = "red";
 
+    // Validate username
     if (username === "") {
-        errorMessage.textContent = "Please enter your username.";
+        errorMessage.textContent = "Please enter your Student ID.";
         return;
     }
 
+    // Validate password
     if (password === "") {
         errorMessage.textContent = "Please enter your password.";
         return;
     }
 
+    // Validate password length
     if (password.length < 6) {
         errorMessage.textContent = "Password must contain at least 6 characters.";
         return;
     }
 
+    // Validate student ID
     if (username !== "student") {
-        errorMessage.textContent = "Invalid username. Please try again.";
+        errorMessage.textContent = "Invalid Student ID. Please try again.";
         return;
     }
 
+    // Successful login
     errorMessage.style.color = "green";
-    errorMessage.textContent = "Login successful! Welcome, Student.";
+    errorMessage.textContent =
+        "Welcome to the Student Examination Portal!";
 });
